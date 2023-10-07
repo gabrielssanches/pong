@@ -31,9 +31,8 @@ RUN cd $RAYLIB_SOURCE_DIR/src && \
     make -j PLATFORM=PLATFORM_DESKTOP && \
     make install
 
-COPY entrypoint-c.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/entrypoint-c.sh
-ENTRYPOINT ["/bin/bash", "-c", "source /usr/local/bin/entrypoint-c.sh && /bin/bash"]
+COPY entrypoint-c.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 RUN groupadd -r rey -g $GID && \
     useradd -u $UID -r -g rey -s /bin/bash -c "raylib user" rey

@@ -1,4 +1,3 @@
 *.swp
 *.swo
-_bin*
-_build*
+src/_build*
