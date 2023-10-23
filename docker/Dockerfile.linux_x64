@@ -31,7 +31,7 @@ RUN cd $RAYLIB_SOURCE_DIR/src && \
     make -j PLATFORM=PLATFORM_DESKTOP && \
     make install
 
-COPY entrypoint-c.sh /usr/local/bin/entrypoint.sh
+COPY entrypoint-linux_x64.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 RUN groupadd -r rey -g $GID && \
